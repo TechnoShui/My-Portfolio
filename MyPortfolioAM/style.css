@@ -245,7 +245,7 @@ h2 span {
     position: absolute;
     right: 2%;
     bottom: 13%;
-    background: #15151e;
+    background: #5cb8f9;
     border: 1px solid #30303c;
     padding: 22px 28px;
     border-radius: 12px;
@@ -255,7 +255,7 @@ h2 span {
 .code-card span,
 .code-card small {
     display: block;
-    color: var(--muted);
+    color: var(--bg);
     font-size: .75rem
 }
 
@@ -376,10 +376,6 @@ h2 {
     color: #ccc
 }
 
-.cloud-section {
-    background: var(--bg);
-}
-
 .cloud-flow {
     display: flex;
     align-items: center;
@@ -389,7 +385,7 @@ h2 {
 
 .cloud-flow div {
     border: 1px solid var(--line);
-    background: var(--panel);
+    background: var(--bg);
     border-radius: 10px;
     padding: 22px;
     min-width: 150px
@@ -454,7 +450,7 @@ footer {
         left: 0;
         right: 0;
         padding: 20px 7%;
-        background: #0a0a0f;
+        background-color: var(--bg);
         border-bottom: 1px solid var(--line);
         flex-direction: column;
         gap: 18px
