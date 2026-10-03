@@ -175,6 +175,8 @@ nav a:hover {
 }
 
 h1 {
+    font-family: "Algerian", serif;
+    font-weight: normal;
     font-size: clamp(4rem, 10vw, 8.5rem);
     line-height: .9;
     letter-spacing: -7px;
