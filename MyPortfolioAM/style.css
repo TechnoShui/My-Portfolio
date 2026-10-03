@@ -1,0 +1,616 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+/* Animated futuristic background */
+body {
+    position: relative;
+    overflow-x: hidden;
+    background: #0a0a0f;
+}
+
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
+    filter: blur(90px);
+    opacity: 0.18;
+}
+
+body::before {
+    background: #00e5ff;
+    top: -180px;
+    left: -150px;
+    animation: floatBlob1 12s ease-in-out infinite alternate;
+}
+
+body::after {
+    background: #7c5cff;
+    right: -180px;
+    bottom: -150px;
+    animation: floatBlob2 15s ease-in-out infinite alternate;
+}
+
+@keyframes floatBlob1 {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(180px, 120px) scale(1.15);
+    }
+
+    100% {
+        transform: translate(80px, 300px) scale(0.9);
+    }
+}
+
+@keyframes floatBlob2 {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(-150px, -120px) scale(1.2);
+    }
+
+    100% {
+        transform: translate(-50px, -250px) scale(0.9);
+    }
+}
+
+body {
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 50px 50px;
+    }
+}
+
+:root {
+    --bg: #0a0a0f;
+    --panel: #11111a;
+    --text: #f5f5f7;
+    --muted: #a6a6b2;
+    --accent:#00e5ff;
+    --line: #24242f
+}
+
+html {
+    scroll-behavior: smooth
+}
+
+body {
+    font-family: Inter, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6
+}
+
+a {
+    color: inherit;
+    text-decoration: none
+}
+
+.navbar {
+    height: 76px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+    background: rgba(10, 10, 15, .88);
+    backdrop-filter: blur(12px);
+    z-index: 10
+}
+
+.logo {
+    font-size: 1.35rem;
+    font-weight: 800;
+    letter-spacing: -1px
+}
+
+.logo span {
+    color: var(--accent)
+}
+
+nav {
+    display: flex;
+    gap: 28px
+}
+
+nav a {
+    font-size: .88rem;
+    color: var(--muted);
+    transition: .2s
+}
+
+nav a:hover {
+    color: var(--accent)
+}
+
+.menu-btn {
+    display: none;
+    background: none;
+    border: 0;
+    color: var(--text);
+    font-size: 1.5rem
+}
+
+.hero {
+    min-height: calc(100vh - 76px);
+    padding: 8% 7%;
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap: 50px;
+    align-items: center
+}
+
+.eyebrow,
+.section-label,
+.tag {
+    font-size: .72rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: var(--accent)
+}
+
+h1 {
+    font-size: clamp(4rem, 10vw, 8.5rem);
+    line-height: .9;
+    letter-spacing: -7px;
+    margin: 18px 0 28px
+}
+
+h1 span,
+h2 span {
+    color: var(--accent)
+}
+
+.hero-text {
+    max-width: 610px;
+    color: var(--muted);
+    font-size: 1.05rem
+}
+
+.buttons {
+    display: flex;
+    gap: 14px;
+    margin-top: 30px
+}
+
+.btn {
+    padding: 13px 20px;
+    border: 1px solid var(--line);
+    border-radius: 7px;
+    font-weight: 600;
+    font-size: .9rem
+}
+
+.primary {
+    background: var(--accent);
+    color: #0a0a0f;
+    border-color: var(--accent)
+}
+
+.secondary:hover {
+    border-color: var(--accent)
+}
+
+.hero-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 380px;
+    position: relative
+}
+
+.orb {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    background:radial-gradient(
+    circle at 35% 30%,
+    #b8f8ff,
+    #00e5ff 35%,
+    #06343d 70%,
+    transparent 72%
+    );
+    filter: blur(1px);
+    opacity: .9
+}
+
+.code-card {
+    position: absolute;
+    right: 2%;
+    bottom: 13%;
+    background: #15151e;
+    border: 1px solid #30303c;
+    padding: 22px 28px;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px #000
+}
+
+.code-card span,
+.code-card small {
+    display: block;
+    color: var(--muted);
+    font-size: .75rem
+}
+
+.code-card strong {
+    display: block;
+    font-size: 1.7rem;
+    margin: 8px 0
+}
+
+.code-card strong span {
+    display: inline;
+    color: var(--accent)
+}
+
+.section {
+    padding: 110px 7%;
+    border-top: 1px solid var(--line)
+}
+
+h2 {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    line-height: 1;
+    letter-spacing: -3px;
+    margin: 18px 0 55px
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap: 80px;
+    align-items: start
+}
+
+.about-grid>p,
+.cloud-intro,
+.contact>p {
+    color: var(--muted);
+    font-size: 1.05rem;
+    max-width: 720px
+}
+
+.mini-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px
+}
+
+.mini-stats div {
+    padding: 20px;
+    border: 1px solid var(--line);
+    border-radius: 10px
+}
+
+.mini-stats b,
+.mini-stats span {
+    display: block
+}
+
+.mini-stats b {
+    font-size: 1.5rem
+}
+
+.mini-stats span {
+    font-size: .7rem;
+    color: var(--muted);
+    margin-top: 5px
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px
+}
+
+.skill {
+    padding: 14px 18px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--panel);
+    color: #ddd
+}
+
+.project {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 25px;
+    padding: 35px 0;
+    border-top: 1px solid var(--line)
+}
+
+.project-number {
+    color: var(--accent);
+    font-weight: 700
+}
+
+.project h3 {
+    font-size: 1.8rem;
+    margin: 8px 0
+}
+
+.project p:not(.tag) {
+    color: var(--muted);
+    max-width: 780px
+}
+
+.chips {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 18px
+}
+
+.chips span {
+    font-size: .72rem;
+    padding: 6px 10px;
+    background: #181821;
+    border-radius: 20px;
+    color: #ccc
+}
+
+.cloud-section {
+    background: var(--bg);
+}
+
+.cloud-flow {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 45px
+}
+
+.cloud-flow div {
+    border: 1px solid var(--line);
+    background: var(--panel);
+    border-radius: 10px;
+    padding: 22px;
+    min-width: 150px
+}
+
+.cloud-flow b,
+.cloud-flow span,
+.cloud-flow small {
+    display: block
+}
+
+.cloud-flow b {
+    color: var(--accent);
+    font-size: .75rem
+}
+
+.cloud-flow span {
+    font-weight: 700;
+    font-size: 1.15rem
+}
+
+.cloud-flow small {
+    color: var(--accent);
+    font-size: .75rem
+}
+
+.cloud-flow i {
+    color: var(--accent);
+    font-style: normal;
+    font-size: 1.5rem
+}
+
+.contact {
+    padding-bottom: 130px
+}
+
+.contact-links {
+    display: flex;
+    gap: 25px;
+    margin-top: 30px;
+    flex-wrap: wrap
+}
+
+.contact-links a {
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 4px
+}
+
+footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: .75rem;
+    padding: 25px;
+    border-top: 1px solid var(--line)
+}
+
+@media(max-width:700px) {
+    nav {
+        display: none;
+        position: absolute;
+        top: 76px;
+        left: 0;
+        right: 0;
+        padding: 20px 7%;
+        background: #0a0a0f;
+        border-bottom: 1px solid var(--line);
+        flex-direction: column;
+        gap: 18px
+    }
+
+    .menu-btn {
+        display: block
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding-top: 70px
+    }
+
+    .hero-card {
+        min-height: 280px
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 35px
+    }
+
+    .cloud-flow {
+        flex-direction: column;
+        align-items: stretch
+    }
+
+    .cloud-flow i {
+        transform: rotate(90deg);
+        text-align: center
+    }
+
+    h1 {
+        letter-spacing: -4px
+    }
+
+    .project {
+        grid-template-columns: 45px 1fr
+    }
+}
+
+/* ================================
+   MOUSE FOLLOWING GLOW
+================================ */
+
+.mouse-glow {
+    position: fixed;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+
+    background: radial-gradient(circle,
+            rgba(0, 229, 255, 0.18) 0%,
+            rgba(0, 229, 255, 0.06) 40%,
+            transparent 75%);
+
+    transform: translate(-50%, -50%);
+    transition: left 0.08s ease-out, top 0.08s ease-out;
+}
+
+/* Keep actual website content above the glow */
+.navbar,
+main,
+footer {
+    position: relative;
+    z-index: 1;
+}
+
+/* ================================
+   FLOATING PARTICLES
+================================ */
+
+.particle {
+    position: fixed;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #00e5ff;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0;
+    box-shadow: 0 0 8px rgba(0, 229, 255, 0.8);
+
+    animation: particleFloat linear infinite;
+}
+
+@keyframes particleFloat {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: translateY(-120px) translateX(30px);
+        opacity: 0.5;
+    }
+
+    85% {
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: translateY(-250px) translateX(-30px);
+        opacity: 0;
+    }
+}
+.hero-photo {
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.hero-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.hero-photo {
+    position: relative;
+    width: 320px !important;
+    height: 320px !important;
+    border-radius: 50% !important;
+    overflow: visible !important;
+    isolation: isolate;
+}
+
+.hero-photo::before {
+    content: "";
+    position: absolute;
+    inset: -12px;
+    border-radius: 50%;
+    background: rgba(0, 229, 255, 0.22);
+    filter: blur(25px);
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+.hero-photo img {
+    position: relative;
+    z-index: 1;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+    border-radius: 50% !important;
+}
+
+.hero-photo:hover::before {
+    background: rgba(0, 229, 255, 0.40);
+    filter: blur(32px);
+    transform: scale(1.05);
+}
