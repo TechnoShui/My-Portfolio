@@ -612,3 +612,19 @@ footer {
     filter: blur(32px);
     transform: scale(1.05);
 }
+.project h3 a {
+    color: inherit;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.project h3 {
+    position: static;
+    margin: 0 0 20px 0;
+}
+
+.project p {
+    position: static;
+    margin: 0;
+    padding: 0;
+}
