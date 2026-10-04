@@ -16,7 +16,7 @@ jobs:
      with:
        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-       aws-region: Asia Pacific (Mumbai) ap-south-1
+       aws-region: Asia Pacific ap-south-1
 
    - name: Deploy static site to S3 bucket
      run: aws s3 sync . s3://my-portfolio-am --delete
