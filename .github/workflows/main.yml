@@ -19,4 +19,4 @@ jobs:
        aws-region: ap-south-1
 
    - name: Deploy static site to S3 bucket
-     run: aws s3 sync . s3://my-portfolio-am --delete
+     run: aws s3 sync ./MyPortfolioAM s3://my-portfolio-am --delete
